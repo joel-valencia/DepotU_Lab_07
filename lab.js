@@ -70,12 +70,12 @@ var lab = {
         /**
          * the filter method should iterate over the array and perform a test on each value in the array
          * and then return an array of only the values that pass the test
-         * Objective: return array of values that are > 30
+         * Objective: return array of values that are > min
          */
         filter: function(arg, min) {
             var result = [];
             for (var i = 0; i < arg.length; i++) {
-                if (arg[i] > 30) {
+                if (arg[i] > min) {
                     result.push(arg[i]);
                 }
             }
