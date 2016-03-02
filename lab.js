@@ -33,6 +33,7 @@
             for (var i = 0; i < item.length; i++) {
                 accumulator += item[i];
             }
+            return accumulator;
     }
 var lab = {
         //Array functions
@@ -85,7 +86,13 @@ var lab = {
          * this means the array does not contain any items within it that themselves an array
          */
         concatAll: function(arg) {
-
+            var result = [];
+            for (var i = 0; i < arg.length; i++) {
+                for (var j = 0; j < arg[i].length; j++) {
+                    result.push(arg[i][j]);
+                }
+            }
+            return result;
         },
         /**
          * the reduce method should take in an array, an iterator function (created above), and an accumulator--for our
@@ -95,7 +102,7 @@ var lab = {
          * Objective: return the sum of all items in the array
          */
         reduce: function(list, iterator, accumulator) {
-
+            return iterator(list, accumulator);
         },
 
         //Object functions
@@ -106,7 +113,9 @@ var lab = {
          * Objective: iterate over the object and return true if the property: 'propertyChecked' is on the object
          */
         hasOwnProperty: function(arg, propertyChecked) {
-
+            if (arg[propertyChecked]) {
+                return true;
+            }
         },
         /**
          *the objkeys method should take in an object, iterate over the properties, and return an array
