@@ -312,5 +312,3 @@ function test() {
     console.log('# of test\s complete: ' + correctCount + '/10');
 }
 
-//remove me when done
-test();
