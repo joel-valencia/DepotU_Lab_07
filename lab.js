@@ -30,7 +30,9 @@
      * up each item in the array and return the total value as the accumulator
      */
     function iterator(item, accumulator) {
-
+            for (var i = 0; i < item.length; i++) {
+                accumulator += item[i];
+            }
     }
 var lab = {
         //Array functions
@@ -47,7 +49,10 @@ var lab = {
          * Objective: multiply each number in the array by 2 and return the modified array
          */
         foreach: function(arg) {
-
+            for (var i = 0; i < arg.length; i++) {
+                arg[i] *= 2;
+            }
+            return arg;
         },
         /**
          * the map method should iterate over the array and perform a function on all the array items
@@ -55,7 +60,11 @@ var lab = {
          * Objective: multiple each number in the array by 2 and return the new array
          */
         map: function(arg) {
-
+            var result = [];
+            for (var i = 0; i < arg.length; i++) {
+                result.push(arg[i] * 2);
+            }
+            return result;
         },
         /**
          * the filter method should iterate over the array and perform a test on each value in the array
@@ -63,7 +72,7 @@ var lab = {
          * Objective: return array of values that are > 30
          */
         filter: function(arg, min) {
-
+               
         },
         /**
          * the concatAll method should take in a nested array and then return a new array that has been flattened
@@ -272,3 +281,6 @@ function test() {
     })();
     console.log('# of test\s complete: ' + correctCount + '/10');
 }
+
+//remove me when done
+document.onload(test());
