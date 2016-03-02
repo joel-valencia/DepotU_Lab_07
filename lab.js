@@ -72,7 +72,13 @@ var lab = {
          * Objective: return array of values that are > 30
          */
         filter: function(arg, min) {
-               
+            var result = [];
+            for (var i = 0; i < arg.length; i++) {
+                if (arg[i] > 30) {
+                    result.push(arg[i]);
+                }
+            }
+            return result;
         },
         /**
          * the concatAll method should take in a nested array and then return a new array that has been flattened
