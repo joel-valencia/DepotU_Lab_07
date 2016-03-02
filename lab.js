@@ -122,14 +122,23 @@ var lab = {
          *of the properties
          */
         objKeys: function(arg) {
-
+            var properties = []
+            for (var key in arg) {
+                properties.push(key);
+            }
+            return properties;
+            //return Object.getOwnPropertyNames(arg);
         },
         /**
          * the forinobj method should take in an object, iterate over it, and multiply all the values
          * in the object by 2, and then return the modified obj
          */
         forInObj: function(arg) {
-
+            var result = arg;
+            for (var key in result) {
+                result[key] *= 2;
+            }
+            return result;
         },
         /**
          * the remove method should take in an obj and a min number. It should iterate over the object
@@ -138,7 +147,13 @@ var lab = {
          * greater than min
          */
         remove: function(arg, min) {
-
+            var result = arg;
+            for (var key in arg) {
+                if (arg[key] <= min) {
+                    delete arg[key];
+                }
+            }
+            return result;
         }
 }
 
@@ -298,4 +313,4 @@ function test() {
 }
 
 //remove me when done
-document.onload(test());
+test();
